@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct Schedules: View {
+   @State var selected = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Menu {
+            Button {
+                selected = "Linear"
+            } label: {
+                Text("Linear")
+                Image(systemName: "arrow.down.right.circle")
+            }
+            Button {
+                selected = "Radial"
+            } label: {
+                Text("Radial")
+                Image(systemName: "arrow.up.and.down.circle")
+            }
+        } label: {
+             Text(selected)
+             Image(systemName: "tag.circle")
+        }
     }
 }
 
