@@ -23,10 +23,10 @@ struct ContentView: View {
                         Image(systemName: "map.fill")
                         Text("Route")
                     }.tag(1)
-                Text("Nearby Screen")
+                Schedules()
                     .tabItem {
                         Image(systemName: "mappin.circle.fill")
-                        Text("Nearby")
+                        Text("Schedules")
                     }.tag(2)
             }
             .navigationTitle(selection == 0 ? "Home" : "")
