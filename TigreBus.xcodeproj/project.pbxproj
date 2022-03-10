@@ -11,6 +11,8 @@
 		6F51D83527DA5C680086EA23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D83427DA5C680086EA23 /* ContentView.swift */; };
 		6F51D83727DA5C690086EA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51D83627DA5C690086EA23 /* Assets.xcassets */; };
 		6F51D83A27DA5C690086EA23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51D83927DA5C690086EA23 /* Preview Assets.xcassets */; };
+		6F51D84427DA5D1E0086EA23 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D84327DA5D1E0086EA23 /* Home.swift */; };
+		6F51D84827DA5E580086EA23 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D84727DA5E580086EA23 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		6F51D83627DA5C690086EA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F51D83927DA5C690086EA23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6F51D83B27DA5C690086EA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F51D84327DA5D1E0086EA23 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		6F51D84727DA5E580086EA23 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		6F51D83127DA5C680086EA23 /* TigreBus */ = {
 			isa = PBXGroup;
 			children = (
+				6F51D84227DA5D080086EA23 /* Screens */,
 				6F51D83227DA5C680086EA23 /* TigreBusApp.swift */,
 				6F51D83427DA5C680086EA23 /* ContentView.swift */,
 				6F51D83627DA5C690086EA23 /* Assets.xcassets */,
@@ -67,6 +72,15 @@
 				6F51D83927DA5C690086EA23 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6F51D84227DA5D080086EA23 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6F51D84327DA5D1E0086EA23 /* Home.swift */,
+				6F51D84727DA5E580086EA23 /* Route.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F51D83527DA5C680086EA23 /* ContentView.swift in Sources */,
+				6F51D84827DA5E580086EA23 /* Route.swift in Sources */,
+				6F51D84427DA5D1E0086EA23 /* Home.swift in Sources */,
 				6F51D83327DA5C680086EA23 /* TigreBusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
