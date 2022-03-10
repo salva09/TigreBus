@@ -8,29 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selection = 0
-    
     var body: some View {
-        NavigationView {
-            TabView(selection: $selection) {
-                Home()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                }.tag(0)
-                Route()
-                    .tabItem {
-                        Image(systemName: "map.fill")
-                        Text("Route")
-                    }.tag(1)
-                Schedules()
-                    .tabItem {
-                        Image(systemName: "mappin.circle.fill")
-                        Text("Schedules")
-                    }.tag(2)
+        TabView {
+            Home()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
             }
-            .navigationTitle(selection == 0 ? "Home" : "")
-            .navigationBarTitleDisplayMode(selection == 0 ? .large : .inline)
+            Route()
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("Route")
+                }
+            Schedules()
+                .tabItem {
+                    Image(systemName: "clock.fill")
+                    Text("Schedules")
+                }
         }
     }
 }

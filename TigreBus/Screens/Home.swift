@@ -13,27 +13,31 @@ El TigreBús es el sistema de transporte interno que ofrece la Universidad Autó
 """
     
     var body: some View {
-        List {
-            Text(description)
-            
-            Section(header: Text("Horarios de TIGREBUS de autobús")) {
-                Text("La ruta de la línea TIGREBUS de autobús opera los todos los días. Horario regular de operación: 6:45 - 21:55")
+        NavigationView {
+            List {
+                Text(description)
                 
-                ScheduleTableView()
-            }
-            
-            Section(header: Text("Preguntas frecuentes de la línea TIGREBUS")) {
-                Text("¿A qué hora comienza a funcionar la línea TIGREBUS de autobús?")
-                    .font(Font.body.bold())
-                Text("La línea TIGREBUS comienza a operar a las en 6:45 los domingo, lunes, martes, miércoles, jueves, viernes, sábado.")
-            }
-            
-            Section {
-                Text("¿A qué hora deja de funcionar la línea TIGREBUS autobús?")
-                    .font(Font.body.bold())
-                Text("La línea TIGREBUS deja de operar a las 21:55 los domingo, lunes, martes, miércoles, jueves, viernes, sábado.")
-            }
-        }.listStyle(InsetGroupedListStyle())
+                Section(header: Text("Horarios de TIGREBUS de autobús")) {
+                    Text("La ruta de la línea TIGREBUS de autobús opera los todos los días. Horario regular de operación: 6:45 - 21:55")
+                    
+                    ScheduleTableView()
+                }
+                
+                Section(header: Text("Preguntas frecuentes de la línea TIGREBUS")) {
+                    Text("¿A qué hora comienza a funcionar la línea TIGREBUS de autobús?")
+                        .font(Font.body.bold())
+                    Text("La línea TIGREBUS comienza a operar a las en 6:45 los domingo, lunes, martes, miércoles, jueves, viernes, sábado.")
+                }
+                
+                Section {
+                    Text("¿A qué hora deja de funcionar la línea TIGREBUS autobús?")
+                        .font(Font.body.bold())
+                    Text("La línea TIGREBUS deja de operar a las 21:55 los domingo, lunes, martes, miércoles, jueves, viernes, sábado.")
+                }
+            }.listStyle(InsetGroupedListStyle())
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.large)
+        }
     }
 }
 
