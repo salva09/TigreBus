@@ -17,8 +17,8 @@ struct ContentView: View {
                 }
             Route()
                 .tabItem {
-                    Image(systemName: "map.fill")
-                    Text("Routes")
+                    Image(systemName: "location.fill")
+                    Text("Location")
                 }
             Schedules()
                 .tabItem {
