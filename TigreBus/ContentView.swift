@@ -14,11 +14,11 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
-            }
+                }
             Route()
                 .tabItem {
                     Image(systemName: "map.fill")
-                    Text("Route")
+                    Text("Routes")
                 }
             Schedules()
                 .tabItem {

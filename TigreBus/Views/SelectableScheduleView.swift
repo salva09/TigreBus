@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct SelectableScheduleView: View {
-    @State var selected = "Ruta"
-    
+    @State var selected: String
     var entryList: Array<ScheduleEntry>
+    
+    init(list: Array<ScheduleEntry>) {
+        entryList = list
+        _selected = State(initialValue: list[0].title)
+    }
     
     var body: some View {
         VStack {
@@ -27,8 +31,10 @@ struct SelectableScheduleView: View {
                  Image(systemName: "tag.circle")
             }
             
-            if entryList.filter{ $0.title == selected }.first != nil {
-                Text(entryList.filter{ $0.title == selected }.first!.content)
+            let selectedEntry = entryList.filter{ $0.title == selected }.first
+            
+            if selectedEntry != nil {
+                Text(selectedEntry!.content)
             }
         }
     }
@@ -41,6 +47,6 @@ struct SelectableScheduleView_Previews: PreviewProvider {
             ScheduleEntry(title: "Bye", content: "Bye world")
         ]
         
-        SelectableScheduleView(entryList: test)
+        SelectableScheduleView(list: test)
     }
 }
