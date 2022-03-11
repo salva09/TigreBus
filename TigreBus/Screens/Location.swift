@@ -37,8 +37,8 @@ struct Location: View {
     }
 }
 
-struct Route_Previews: PreviewProvider {
+struct Location_Previews: PreviewProvider {
     static var previews: some View {
-        Route()
+        Location()
     }
 }
