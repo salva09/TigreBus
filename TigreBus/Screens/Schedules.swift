@@ -13,7 +13,7 @@ struct Schedules: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Dentro del campus")) {
+                Section(header: Text("Servicio en campus")) {
                     Menu {
                         Button {
                             selected = "Linear"

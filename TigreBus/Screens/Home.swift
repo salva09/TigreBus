@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct Home: View {
+    var phoneNumber = "81-8329-4000"
+    
     var description: String = """
-El TigreBús es el sistema de transporte interno que ofrece la Universidad Autónoma de Nuevo León a sus alumnos. El servicio es de manera gratuita y cuenta con cuatro distintos recorridos en sus campus: Ciudad Universitaria, Mederos, Campus Ciencias Agropecuarias y Campus de la Salud.
+La Universidad Autónoma de Nuevo León pone a disposición de sus estudiantes el sistema de transportación interna Tigrebus en diversos campus universitarios del área metropolitana de Monterrey con el propósito de facilitar el acceso rápido y seguro a las escuelas y facutlades.
+"""
+    
+    var requirements: String = """
+· Mostrar credencial de estudiante.
+· Uso correcto del cubrebocas.
+· Aplicar gel antibacterial.
+· Temperatura debajo de los 37 °C.
+· Respetar la sana distancia dejando libres los asientos señalados.
+"""
+    
+    var rules: String = """
+· Hacer fila para abordar.
+· Ascender y descender sólo en las paradas oficiales.
+· Dar preferencia a personas con discapacidad.
+· No subir con bebidas y/o alimentos, ni fumar dentro de las unidades.
+· No tirar basura.
+· Respetar al operdador y a los demás usuarios.
+· Dejar libre la cabina del conductor delimitada por la franja amarilla.
+"""
+    
+    var address: String = """
+Ciudad Universitaria, Unidad Norte, San Nicolás de los Garza 66451, Nuevo León
 """
     
     var body: some View {
@@ -17,26 +41,54 @@ El TigreBús es el sistema de transporte interno que ofrece la Universidad Autó
             List {
                 Text(description)
                 
-                Section(header: Text("Horarios de TIGREBUS de autobús")) {
-                    Text("La ruta de la línea TIGREBUS de autobús opera los todos los días. Horario regular de operación: 6:45 - 21:55")
-                    
-                    ScheduleTableView()
+                Section(header: Text("Requisitos para abordar")) {
+                    Text(requirements)
                 }
                 
-                Section(header: Text("Preguntas frecuentes de la línea TIGREBUS")) {
-                    Text("¿A qué hora comienza a funcionar la línea TIGREBUS de autobús?")
-                        .font(Font.body.bold())
-                    Text("La línea TIGREBUS comienza a operar a las en 6:45 los domingo, lunes, martes, miércoles, jueves, viernes, sábado.")
+                Section(header: Text("Reglamento")) {
+                    Text(rules)
                 }
                 
-                Section {
-                    Text("¿A qué hora deja de funcionar la línea TIGREBUS autobús?")
-                        .font(Font.body.bold())
-                    Text("La línea TIGREBUS deja de operar a las 21:55 los domingo, lunes, martes, miércoles, jueves, viernes, sábado.")
+                Section(header: Text("Enlaces relacionados")) {
+                    Button(action: {
+                        let twitterUri = "https://twitter.com.mx"
+                        guard let url = URL(string: twitterUri) else { return }
+                        UIApplication.shared.open(url)
+                       }) {
+                       Text("Página de Twitter")
+                        .foregroundColor(.blue)
+                    }
+                }
+                
+                Section(header: Text("Teléfono")) {
+                    Button(action: {
+                        let phone = "tel://"
+                        let phoneNumberformatted = phone + phoneNumber
+                        guard let url = URL(string: phoneNumberformatted) else { return }
+                        UIApplication.shared.open(url)
+                       }) {
+                       Text(phoneNumber)
+                        .foregroundColor(.blue)
+                    }
+                }
+                
+                Section(header: Text("Dirección")) {
+                    Text(address)
                 }
             }.listStyle(InsetGroupedListStyle())
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.large)
+            .toolbar(content: {
+                Button(action: {
+                    let phone = "tel://"
+                    let phoneNumberformatted = phone + phoneNumber
+                    guard let url = URL(string: phoneNumberformatted) else { return }
+                    UIApplication.shared.open(url)
+                   }) {
+                    Image(systemName: "phone")
+                    .foregroundColor(.blue)
+                }
+            })
         }
     }
 }
