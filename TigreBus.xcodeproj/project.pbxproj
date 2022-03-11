@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41EA4C5E27DC00E3009B9507 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C5D27DC00E3009B9507 /* GoogleMapsBase */; };
+		41EA4C6027DC00E3009B9507 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C5F27DC00E3009B9507 /* GooglePlaces */; };
+		41EA4C6227DC00E3009B9507 /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C6127DC00E3009B9507 /* GoogleMapsM4B */; };
+		41EA4C6427DC00E3009B9507 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C6327DC00E3009B9507 /* GoogleMapsCore */; };
+		41EA4C6627DC00E3009B9507 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C6527DC00E3009B9507 /* GoogleMaps */; };
 		6F51D83327DA5C680086EA23 /* TigreBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D83227DA5C680086EA23 /* TigreBusApp.swift */; };
 		6F51D83527DA5C680086EA23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D83427DA5C680086EA23 /* ContentView.swift */; };
 		6F51D83727DA5C690086EA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51D83627DA5C690086EA23 /* Assets.xcassets */; };
@@ -43,6 +48,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EA4C6227DC00E3009B9507 /* GoogleMapsM4B in Frameworks */,
+				41EA4C6427DC00E3009B9507 /* GoogleMapsCore in Frameworks */,
+				41EA4C6627DC00E3009B9507 /* GoogleMaps in Frameworks */,
+				41EA4C5E27DC00E3009B9507 /* GoogleMapsBase in Frameworks */,
+				41EA4C6027DC00E3009B9507 /* GooglePlaces in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +143,13 @@
 			dependencies = (
 			);
 			name = TigreBus;
+			packageProductDependencies = (
+				41EA4C5D27DC00E3009B9507 /* GoogleMapsBase */,
+				41EA4C5F27DC00E3009B9507 /* GooglePlaces */,
+				41EA4C6127DC00E3009B9507 /* GoogleMapsM4B */,
+				41EA4C6327DC00E3009B9507 /* GoogleMapsCore */,
+				41EA4C6527DC00E3009B9507 /* GoogleMaps */,
+			);
 			productName = TigreBus;
 			productReference = 6F51D82F27DA5C680086EA23 /* TigreBus.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +177,9 @@
 				Base,
 			);
 			mainGroup = 6F51D82627DA5C680086EA23;
+			packageReferences = (
+				41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+			);
 			productRefGroup = 6F51D83027DA5C680086EA23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,6 +402,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41EA4C5D27DC00E3009B9507 /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsBase;
+		};
+		41EA4C5F27DC00E3009B9507 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GooglePlaces;
+		};
+		41EA4C6127DC00E3009B9507 /* GoogleMapsM4B */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsM4B;
+		};
+		41EA4C6327DC00E3009B9507 /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsCore;
+		};
+		41EA4C6527DC00E3009B9507 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41EA4C5C27DC00E3009B9507 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6F51D82727DA5C680086EA23 /* Project object */;
 }
