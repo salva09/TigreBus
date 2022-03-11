@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct RouteEntry: Identifiable {
+struct Route: Identifiable {
     let id = UUID()
 }

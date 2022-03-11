@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Route: View {
+struct Location: View {
     @State var selected = "Ruta"
     
     var body: some View {
