@@ -14,6 +14,7 @@ struct Schedule: Identifiable {
 }
 
 struct ScheduleTableView: View {
+    
     private var schedules = [
         Schedule(dayName: "Monday", time: "6:45 - 21:55"),
         Schedule(dayName: "Tuesday", time: "6:45 - 21:55"),

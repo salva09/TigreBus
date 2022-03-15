@@ -11,7 +11,9 @@ struct Location: View {
     @State var selected = "Ruta"
     
     var body: some View {
+        
         NavigationView {
+            
             MapView()
             .toolbar(content: {
                 Menu {
