@@ -15,5 +15,7 @@ struct Route: Identifiable {
     let mapCenter: CLLocationCoordinate2D
     let routeWaypoints: [CLLocationCoordinate2D]
 
-    func getMarkerPosition() {}
+    func getMarkerPosition() -> CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: -32.86, longitude: 150.20)
+    }
 }

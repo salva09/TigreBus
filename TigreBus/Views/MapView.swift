@@ -23,7 +23,7 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ mapView: GMSMapView, context: Self.Context) {
-        marker.position = CLLocationCoordinate2D(latitude: -32.86, longitude: 150.20)
+        marker.position = route.getMarkerPosition()
         marker.icon = UIImage(systemName: "bus")
         marker.map = mapView
 
