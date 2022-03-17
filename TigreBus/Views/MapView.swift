@@ -9,7 +9,7 @@ import SwiftUI
 import GoogleMaps
 
 struct MapView: UIViewRepresentable {
-    var route: Route
+    @Binding var route: Route
     let path: GMSMutablePath = GMSMutablePath()
     let marker: GMSMarker = GMSMarker()
     let origin: GMSMarker = GMSMarker()
@@ -23,6 +23,10 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ mapView: GMSMapView, context: Self.Context) {
+        mapView.clear()
+
+        mapView.animate(to: GMSCameraPosition.camera(withLatitude: route.mapCenter.latitude, longitude: route.mapCenter.longitude, zoom: 6.0))
+
         marker.position = route.getMarkerPosition()
         marker.icon = UIImage(systemName: "bus")
         marker.map = mapView
@@ -33,6 +37,7 @@ struct MapView: UIViewRepresentable {
         destination.position = route.destination
         destination.map = mapView
 
+        path.removeAllCoordinates()
         for coordinate in route.routeWaypoints {
             path.add(coordinate)
         }
@@ -40,22 +45,5 @@ struct MapView: UIViewRepresentable {
         polyline.strokeColor = .blue
         polyline.strokeWidth = 1.0
         polyline.map = mapView
-    }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        let routeExample = Route(
-                origin: CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
-                destination: CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20),
-                mapCenter: CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
-                routeWaypoints: [
-                    CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
-                    CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20)
-                ],
-                getMarkerPosition: { () -> CLLocationCoordinate2D in CLLocationCoordinate2D(latitude: -32.86, longitude: 150.20) }
-        )
-
-        MapView(route: routeExample)
     }
 }

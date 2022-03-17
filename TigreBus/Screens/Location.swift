@@ -9,35 +9,26 @@ import SwiftUI
 import GoogleMaps
 
 struct Location: View {
-    @State var selected = "Ruta"
+    @State var selected: String
+    @State var actualRoute: Route
 
-    let routeExample = Route(
-            origin: CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
-            destination: CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20),
-            mapCenter: CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
-            routeWaypoints: [
-                CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
-                CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20)
-            ],
-            getMarkerPosition: { () -> CLLocationCoordinate2D in CLLocationCoordinate2D(latitude: -32.86, longitude: 150.20) }
-    )
+    init() {
+        _selected = State(initialValue: routeEntryList[0].name)
+        _actualRoute = State(initialValue: routeEntryList[0].route)
+    }
 
     var body: some View {
         NavigationView {
-            MapView(route: routeExample)
+            MapView(route: $actualRoute)
                     .toolbar(content: {
                         Menu {
-                            Button {
-                                selected = "Linear"
-                            } label: {
-                                Text("Linear")
-                                Image(systemName: "arrow.down.right.circle")
-                            }
-                            Button {
-                                selected = "Radial"
-                            } label: {
-                                Text("Radial")
-                                Image(systemName: "arrow.up.and.down.circle")
+                            ForEach(routeEntryList, id: \.id) { entry in
+                                Button {
+                                    selected = entry.name
+                                    actualRoute = entry.route
+                                } label: {
+                                    Text(entry.name)
+                                }
                             }
                         } label: {
                             Text(selected)
