@@ -52,7 +52,8 @@ struct MapView_Previews: PreviewProvider {
                 routeWaypoints: [
                     CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
                     CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20)
-                ]
+                ],
+                getMarkerPosition: { () -> CLLocationCoordinate2D in CLLocationCoordinate2D(latitude: -32.86, longitude: 150.20) }
         )
 
         MapView(route: routeExample)
