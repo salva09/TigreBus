@@ -6,7 +6,14 @@
 //
 
 import Foundation
+import GoogleMaps
 
 struct Route: Identifiable {
     let id = UUID()
+    let origin: CLLocationCoordinate2D
+    let destination: CLLocationCoordinate2D
+    let mapCenter: CLLocationCoordinate2D
+    let routeWaypoints: [CLLocationCoordinate2D]
+
+    func getMarkerPosition() {}
 }

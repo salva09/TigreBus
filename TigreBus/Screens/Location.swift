@@ -6,35 +6,45 @@
 //
 
 import SwiftUI
+import GoogleMaps
 
 struct Location: View {
     @State var selected = "Ruta"
-    
+
+    let routeExample = Route(
+            origin: CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
+            destination: CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20),
+            mapCenter: CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
+            routeWaypoints: [
+                CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20),
+                CLLocationCoordinate2D(latitude: -31.86, longitude: 149.20)
+            ]
+    )
+
     var body: some View {
-        
         NavigationView {
-            
-            MapView()
-            .toolbar(content: {
-                Menu {
-                    Button {
-                        selected = "Linear"
-                    } label: {
-                        Text("Linear")
-                        Image(systemName: "arrow.down.right.circle")
-                    }
-                    Button {
-                        selected = "Radial"
-                    } label: {
-                        Text("Radial")
-                        Image(systemName: "arrow.up.and.down.circle")
-                    }
-                } label: {
-                     Text(selected)
-                     Image(systemName: "tag.circle")
-                }.padding()
-            })
-            .navigationBarTitleDisplayMode(.inline)
+            MapView(route: routeExample)
+                    .toolbar(content: {
+                        Menu {
+                            Button {
+                                selected = "Linear"
+                            } label: {
+                                Text("Linear")
+                                Image(systemName: "arrow.down.right.circle")
+                            }
+                            Button {
+                                selected = "Radial"
+                            } label: {
+                                Text("Radial")
+                                Image(systemName: "arrow.up.and.down.circle")
+                            }
+                        } label: {
+                            Text(selected)
+                            Image(systemName: "tag.circle")
+                        }
+                                .padding()
+                    })
+                    .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

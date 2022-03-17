@@ -24,6 +24,7 @@
 		6FAB189E27DBB4DD00DCCA3F /* SelectableScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB189D27DBB4DD00DCCA3F /* SelectableScheduleView.swift */; };
 		6FAB18A327DBB78600DCCA3F /* ScheduleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB18A227DBB78600DCCA3F /* ScheduleEntry.swift */; };
 		6FAB18A627DBC2EB00DCCA3F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB18A527DBC2EB00DCCA3F /* Route.swift */; };
+		6FE5AC6E27E28F1E00A98EBD /* Viwe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5AC6D27E28F1E00A98EBD /* Viwe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		6FAB189D27DBB4DD00DCCA3F /* SelectableScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableScheduleView.swift; sourceTree = "<group>"; };
 		6FAB18A227DBB78600DCCA3F /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
 		6FAB18A527DBC2EB00DCCA3F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		6FE5AC6D27E28F1E00A98EBD /* Viwe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viwe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				6F51D84327DA5D1E0086EA23 /* Home.swift */,
 				6F51D84727DA5E580086EA23 /* Location.swift */,
 				6F51D85227DA8C0D0086EA23 /* Schedules.swift */,
+				6FE5AC6D27E28F1E00A98EBD /* Viwe.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				6F51D85327DA8C0D0086EA23 /* Schedules.swift in Sources */,
 				6F51D84C27DA61CB0086EA23 /* MapView.swift in Sources */,
 				6F51D84427DA5D1E0086EA23 /* Home.swift in Sources */,
+				6FE5AC6E27E28F1E00A98EBD /* Viwe.swift in Sources */,
 				6F51D83327DA5C680086EA23 /* TigreBusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
