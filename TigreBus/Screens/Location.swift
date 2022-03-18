@@ -32,9 +32,9 @@ struct Location: View {
                             }
                         } label: {
                             Text(selected)
-                            Image(systemName: "tag.circle")
+                            Image(systemName: "location.circle")
                         }
-                                .padding()
+                        .padding()
                     })
                     .navigationBarTitleDisplayMode(.inline)
         }
