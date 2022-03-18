@@ -13,6 +13,7 @@
 		41EA4C6227DC00E3009B9507 /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C6127DC00E3009B9507 /* GoogleMapsM4B */; };
 		41EA4C6427DC00E3009B9507 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C6327DC00E3009B9507 /* GoogleMapsCore */; };
 		41EA4C6627DC00E3009B9507 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 41EA4C6527DC00E3009B9507 /* GoogleMaps */; };
+		6F3A5B6327E5136C00D16944 /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A5B6227E5136C00D16944 /* CollapsibleView.swift */; };
 		6F51D83327DA5C680086EA23 /* TigreBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D83227DA5C680086EA23 /* TigreBusApp.swift */; };
 		6F51D83527DA5C680086EA23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D83427DA5C680086EA23 /* ContentView.swift */; };
 		6F51D83727DA5C690086EA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F51D83627DA5C690086EA23 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		22356BBA29B854EE296F1B64 /* RouteEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteEntry.swift; sourceTree = "<group>"; };
+		6F3A5B6227E5136C00D16944 /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
 		6F51D82F27DA5C680086EA23 /* TigreBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TigreBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F51D83227DA5C680086EA23 /* TigreBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TigreBusApp.swift; sourceTree = "<group>"; };
 		6F51D83427DA5C680086EA23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				6F51D84B27DA61CB0086EA23 /* MapView.swift */,
 				6F51D84F27DA73000086EA23 /* ScheduleTableView.swift */,
 				6FAB189D27DBB4DD00DCCA3F /* SelectableScheduleView.swift */,
+				6F3A5B6227E5136C00D16944 /* CollapsibleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				6FAB18A327DBB78600DCCA3F /* ScheduleEntry.swift in Sources */,
 				6FAB189E27DBB4DD00DCCA3F /* SelectableScheduleView.swift in Sources */,
 				6FE5AC9727E3DF4000A98EBD /* ScheduleEntryList.swift in Sources */,
+				6F3A5B6327E5136C00D16944 /* CollapsibleView.swift in Sources */,
 				6F51D85327DA8C0D0086EA23 /* Schedules.swift in Sources */,
 				6F51D84C27DA61CB0086EA23 /* MapView.swift in Sources */,
 				6FE5AC9427E3DF2A00A98EBD /* RouteEntryList.swift in Sources */,

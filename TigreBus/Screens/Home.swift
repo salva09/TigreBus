@@ -41,13 +41,25 @@ Ciudad Universitaria, Unidad Norte, San Nicolás de los Garza 66451, Nuevo León
             List {
                 Text(description)
                 
-                Section(header: Text("Requisitos para abordar")) {
-                    Text(requirements)
-                }
+                CollapsibleView(
+                    label: { Text("Requisitos para abordar") },
+                    content: {
+                        VStack {
+                            Text(requirements)
+                        }
+                        .padding()
+                    }
+                )
                 
-                Section(header: Text("Reglamento")) {
-                    Text(rules)
-                }
+                CollapsibleView(
+                    label: { Text("Reglamento") },
+                    content: {
+                        VStack {
+                            Text(rules)
+                        }
+                        .padding()
+                    }
+                )
                 
                 Section(header: Text("Enlaces relacionados")) {
                     Button(action: {
