@@ -20,7 +20,8 @@ struct Location: View {
     var body: some View {
         NavigationView {
             MapView(route: $actualRoute)
-                    .toolbar(content: {
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Menu {
                             ForEach(routeEntryList, id: \.id) { entry in
                                 Button {
@@ -34,9 +35,14 @@ struct Location: View {
                             Text(selected)
                             Image(systemName: "location.circle")
                         }
-                        .padding()
-                    })
-                    .navigationBarTitleDisplayMode(.inline)
+                    }
+                    ToolbarItemGroup(placement: .navigationBarLeading) {
+                        Button("Update") {
+                            print("Pressed")
+                        }
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
