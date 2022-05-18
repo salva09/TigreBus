@@ -10,6 +10,8 @@ import GoogleMaps
 
 struct MapView: UIViewRepresentable {
     @Binding var route: Route
+    @Binding var refresh: Bool
+    
     let path: GMSMutablePath = GMSMutablePath()
     let marker: GMSMarker = GMSMarker()
     let origin: GMSMarker = GMSMarker()
@@ -45,5 +47,7 @@ struct MapView: UIViewRepresentable {
         polyline.strokeColor = .blue
         polyline.strokeWidth = 1.0
         polyline.map = mapView
+        
+        let temp = refresh
     }
 }

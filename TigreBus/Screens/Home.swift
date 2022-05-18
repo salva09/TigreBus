@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var showingPopover = false
+    
     var phoneNumber = "81-8329-4000"
     
     var description: String = """
@@ -39,8 +41,6 @@ Ciudad Universitaria, Unidad Norte, San Nicolás de los Garza 66451, Nuevo León
     var body: some View {
         NavigationView {
             List {
-                Text(description)
-                
                 CollapsibleView(
                     label: { Text("Requisitos para abordar") },
                     content: {
@@ -91,14 +91,25 @@ Ciudad Universitaria, Unidad Norte, San Nicolás de los Garza 66451, Nuevo León
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.large)
             .toolbar(content: {
-                Button(action: {
-                    let phone = "tel://"
-                    let phoneNumberformatted = phone + phoneNumber
-                    guard let url = URL(string: phoneNumberformatted) else { return }
-                    UIApplication.shared.open(url)
-                   }) {
-                    Image(systemName: "phone")
-                    .foregroundColor(.blue)
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button("Info") {
+                        showingPopover = true
+                    }
+                    .popover(isPresented: $showingPopover) {
+                        Text(description)
+                            .font(.headline)
+                            .padding()
+                    }
+                    
+                    Button(action: {
+                        let phone = "tel://"
+                        let phoneNumberformatted = phone + phoneNumber
+                        guard let url = URL(string: phoneNumberformatted) else { return }
+                        UIApplication.shared.open(url)
+                       }) {
+                        Image(systemName: "phone")
+                        .foregroundColor(.blue)
+                    }
                 }
             })
         }

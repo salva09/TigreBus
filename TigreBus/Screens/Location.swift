@@ -11,15 +11,17 @@ import GoogleMaps
 struct Location: View {
     @State var selected: String
     @State var actualRoute: Route
+    @State var refresh: Bool
 
     init() {
         _selected = State(initialValue: routeEntryList[0].name)
         _actualRoute = State(initialValue: routeEntryList[0].route)
+        _refresh = State(initialValue: false)
     }
 
     var body: some View {
         NavigationView {
-            MapView(route: $actualRoute)
+            MapView(route: $actualRoute, refresh: $refresh)
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Menu {
@@ -38,7 +40,8 @@ struct Location: View {
                     }
                     ToolbarItemGroup(placement: .navigationBarLeading) {
                         Button("Update") {
-                            print("Pressed")
+                            // update the map view
+                            refresh.toggle()
                         }
                     }
                 }
